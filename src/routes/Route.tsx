@@ -1,5 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
+// import { useUser } from "../contexts/userContext";
 
 interface Props {
     path: string;

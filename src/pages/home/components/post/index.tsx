@@ -3,6 +3,7 @@ import { PostProps } from "../../../../data/interfaces";
 import UserImage from "../UserImage";
 import Comment from "./components/comment";
 import { PostContainer, PostComments, PostHeader, PostFooter } from "./styles";
+import DefaultImage from "../../../../assets/default_image.png";
 
 const Post: React.FC<PostProps> = ({ post }) => {
     function getCommentsCountFormatted(rawCommentsCount: number) {
@@ -17,10 +18,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
             <div>
                 <PostHeader>
                     <UserImage
-                        src={
-                            post.user.avatar ||
-                            "https://www.brookes.ac.uk/assets/0/1425/1426/2147484565/b4ba6acc-f7ff-4a13-9f21-0e83f8c3c9e3.png"
-                        }
+                        src={post.user.avatar || DefaultImage}
                         alt="ProfileImage"
                     />
                     <div>
@@ -32,7 +30,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
                 </PostHeader>
                 <PostComments>
                     {post.comments.map(comment => (
-                        <Comment comment={comment} />
+                        <Comment key={comment.uuid} comment={comment} />
                     ))}
                 </PostComments>
                 <PostFooter>

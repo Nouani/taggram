@@ -3,6 +3,8 @@ import { CommentProps } from "../../../../../../data/interfaces";
 import HeartIcon from "./components/hearticon";
 import UserImage from "../../../UserImage";
 
+import DefaultImage from "../../../../../../assets/default_image.png";
+
 import { CommentContainer, CommentContent } from "./styles";
 
 const Comment: React.FC<CommentProps> = ({ comment }) => {
@@ -22,10 +24,7 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
     return (
         <CommentContainer>
             <UserImage
-                src={
-                    comment.user.avatar ||
-                    "https://www.brookes.ac.uk/assets/0/1425/1426/2147484565/b4ba6acc-f7ff-4a13-9f21-0e83f8c3c9e3.png"
-                }
+                src={comment.user.avatar || DefaultImage}
                 alt="ProfileImage"
             />
             <CommentContent>
