@@ -7,6 +7,7 @@ import { PostContainer, PostComments, PostHeader, PostFooter } from "./styles";
 import DefaultImage from "../../../../assets/default_image.png";
 import { useUser } from "../../../../contexts/userContext";
 import api from "../../../../services/api";
+import MorePosts from "../morePosts";
 
 const Post: React.FC = () => {
     const user = useUser();
@@ -32,45 +33,41 @@ const Post: React.FC = () => {
         }`;
     }
 
-    return (
+    const postLoaded = () => (
         <>
-            {!isLoading ? (
-                <PostContainer>
-                    <img src={post.photo} alt="PostImage" />
-                    <div>
-                        <PostHeader>
-                            <UserImage
-                                src={post.user.avatar || DefaultImage}
-                                alt="ProfileImage"
-                            />
-                            <div>
-                                <h1>{post.user.username}</h1>
-                                <p>
-                                    {post.location.city},{" "}
-                                    {post.location.country}
-                                </p>
-                            </div>
-                        </PostHeader>
-                        <PostComments>
-                            {post.comments.map(comment => (
-                                <Comment key={comment.uuid} comment={comment} />
-                            ))}
-                        </PostComments>
-                        <PostFooter>
-                            <h1>
-                                {getCommentsCountFormatted(
-                                    post.comments.length
-                                )}
-                            </h1>
-                            <p>{post.created_at}</p>
-                        </PostFooter>
-                    </div>
-                </PostContainer>
-            ) : (
-                <PostLoading />
-            )}
+            <PostContainer>
+                <img src={post.photo} alt="PostImage" />
+                <div>
+                    <PostHeader>
+                        <UserImage
+                            src={post.user.avatar || DefaultImage}
+                            alt="ProfileImage"
+                        />
+                        <div>
+                            <h1>{post.user.username}</h1>
+                            <p>
+                                {post.location.city}, {post.location.country}
+                            </p>
+                        </div>
+                    </PostHeader>
+                    <PostComments>
+                        {post.comments.map(comment => (
+                            <Comment key={comment.uuid} comment={comment} />
+                        ))}
+                    </PostComments>
+                    <PostFooter>
+                        <h1>
+                            {getCommentsCountFormatted(post.comments.length)}
+                        </h1>
+                        <p>{post.created_at}</p>
+                    </PostFooter>
+                </div>
+            </PostContainer>
+            <MorePosts uuidPost={post.uuid} />
         </>
     );
+
+    return <>{!isLoading ? postLoaded() : <PostLoading />}</>;
 };
 
 export default Post;

@@ -1,6 +1,5 @@
 import React from "react";
 import { useUser } from "../../contexts/userContext";
-import MorePosts from "./components/morePosts";
 import Post from "./components/post";
 
 import Container from "./styles";
@@ -10,10 +9,7 @@ const Home: React.FC = () => {
 
     return (
         <Container>
-            <div>
-                {!user.isLoading && <Post />}
-                <MorePosts />
-            </div>
+            <div>{!user.isLoading && <Post />}</div>
         </Container>
     );
 };

@@ -32,3 +32,9 @@ export interface IUser {
     username: string;
     avatar: string | null;
 }
+
+export interface IRelatedPost {
+    uuid: string;
+    photo: string;
+    comment_count: number;
+}

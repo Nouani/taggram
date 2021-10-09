@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const MorePostsContainer = styled.div`
+export const MorePostsContainer = styled.div`
     //border: 1px solid red;
     border-top: 1px solid #efefef;
     width: 100%;
@@ -29,4 +29,8 @@ const MorePostsContainer = styled.div`
     }
 `;
 
-export default MorePostsContainer;
+export const ImageLoading = styled.div`
+    width: 280px;
+    height: 280px;
+    background-color: #eee;
+`;
