@@ -1,32 +1,34 @@
 /* eslint-disable camelcase */
 export interface PostProps {
-    post: {
-        uuid: string;
-        user: User;
-        photo: string;
-        created_at: string;
-        location: {
-            city: string;
-            country: string;
-        };
-        comments: Array<Comment>;
+    post: IPost;
+}
+
+export interface IPost {
+    uuid: string;
+    user: IUser;
+    photo: string;
+    created_at: string;
+    location: {
+        city: string;
+        country: string;
     };
+    comments: Array<IComment>;
 }
 
 export interface CommentProps {
-    comment: Comment;
+    comment: IComment;
 }
 
-interface Comment {
+interface IComment {
     uuid: string;
-    user: User;
+    user: IUser;
     message: string;
     created_at: string;
     has_liked: boolean;
     like_count: number;
 }
 
-export interface User {
+export interface IUser {
     username: string;
     avatar: string | null;
 }

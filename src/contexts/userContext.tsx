@@ -1,8 +1,8 @@
 import React, { useContext, createContext, useEffect, useState } from "react";
-import { User } from "../data/interfaces";
+import { IUser } from "../data/interfaces";
 import api from "../services/api";
 
-interface IUserContext extends User {
+interface IUserContext extends IUser {
     isLoading: boolean;
 }
 
@@ -15,7 +15,7 @@ export function useUser(): IUserContext {
 const UserProvider: React.FC = data => {
     const { children } = data;
     const [isLoading, setIsLoading] = useState(true);
-    const [user, setUser] = useState({} as User);
+    const [user, setUser] = useState({} as IUser);
 
     async function getUser() {
         setIsLoading(true);
