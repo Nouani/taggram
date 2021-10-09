@@ -23,6 +23,7 @@ const bounce = keyframes`
 
 export const HeartIconSelected = styled(AiFillHeart)`
     margin-top: 10px;
+    cursor: pointer;
 
     &.bounce {
         animation: ${bounce} 0.3s forwards ease-in;
@@ -31,6 +32,7 @@ export const HeartIconSelected = styled(AiFillHeart)`
 
 export const HeartIconUnselected = styled(AiOutlineHeart)`
     margin-top: 10px;
+    cursor: pointer;
 
     &.bounce {
         animation: ${bounce} 0.4s forwards ease-in;

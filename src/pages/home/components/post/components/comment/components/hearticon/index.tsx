@@ -2,8 +2,12 @@ import React, { useState } from "react";
 
 import { HeartIconSelected, HeartIconUnselected } from "./styles";
 
-const HeartIcon: React.FC = () => {
-    const [isSelected, setIsSelected] = useState(false);
+interface Props {
+    hasLiked: boolean;
+}
+
+const HeartIcon: React.FC<Props> = ({ hasLiked }) => {
+    const [isSelected, setIsSelected] = useState(hasLiked);
     const [startAnimation, setStartAnimation] = useState(false);
 
     function handleAnimationEnd() {
