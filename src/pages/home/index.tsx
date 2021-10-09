@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./components/post";
 
-import { Container } from "./styles";
+import { Container, MorePosts } from "./styles";
 
 const Home: React.FC = () => {
     const mock = {
@@ -69,6 +69,31 @@ const Home: React.FC = () => {
         <Container>
             <div>
                 <Post post={mock} />
+                <MorePosts>
+                    <h1>Mais publicações</h1>
+                    <div>
+                        <img
+                            src="https://source.unsplash.com/random/800x800"
+                            alt=""
+                        />
+                        <img
+                            src="https://source.unsplash.com/random/800x800"
+                            alt=""
+                        />
+                        <img
+                            src="https://source.unsplash.com/random/800x800"
+                            alt=""
+                        />
+                        <img
+                            src="https://source.unsplash.com/random/800x800"
+                            alt=""
+                        />
+                        <img
+                            src="https://source.unsplash.com/random/800x800"
+                            alt=""
+                        />
+                    </div>
+                </MorePosts>
             </div>
         </Container>
     );
