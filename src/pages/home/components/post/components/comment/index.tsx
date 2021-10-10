@@ -8,11 +8,25 @@ import DefaultImage from "../../../../../../assets/default_image.png";
 import { CommentContainer, CommentContent } from "./styles";
 
 const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
-    // eslint-disable-next-line no-unused-vars
     const getDateFormatted = (rawDate: string) => {
-        // TODO: implement this
+        const date = new Date(rawDate);
+        const timeNow = Date.now();
+        const diff = Math.abs(timeNow - Number(date));
+        const hours = Math.ceil(diff / (1000 * 60 * 60));
 
-        return "6h";
+        let time = hours;
+        let complement = "h";
+        if (hours > 24) {
+            time = Math.ceil(time / 24);
+            complement = " dias";
+
+            if (time > 7) {
+                time = Math.ceil(time / 7);
+                complement = " semanas";
+            }
+        }
+
+        return `${time}${complement}`;
     };
 
     const getLikeCountFormatted = (rawLikeCount: number) => {
