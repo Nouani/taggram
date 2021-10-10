@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const CommentContainer = styled.div`
-    //border: 1px solid red;
-
     width: 100%;
     padding: 15px;
 
@@ -12,8 +10,6 @@ export const CommentContainer = styled.div`
 `;
 
 export const CommentContent = styled.div`
-    //border: 1px solid red;
-
     width: 100%;
     max-width: 220px;
 

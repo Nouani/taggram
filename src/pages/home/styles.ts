@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    //border: 1px solid red;
     width: 100%;
 
     display: flex;
@@ -11,7 +10,6 @@ const Container = styled.div`
     padding: 80px 0;
 
     & > div {
-        //border: 1px solid red;
         width: 100%;
         max-width: 930px;
 

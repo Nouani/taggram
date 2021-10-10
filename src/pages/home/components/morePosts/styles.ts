@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MorePostsContainer = styled.div`
-    //border: 1px solid red;
     border-top: 1px solid #efefef;
     width: 100%;
 
@@ -14,11 +13,9 @@ export const MorePostsContainer = styled.div`
     }
 
     & > div {
-        //border: 1px solid red;
-
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         grid-gap: 40px;
         margin-top: 20px;
 

@@ -18,7 +18,6 @@ const PostLoadingContainer = styled.div`
     border-radius: 3px;
 
     .photo {
-        //width: 10px;
         width: 100%;
         max-width: 600px;
         border-radius: 3px 0 0 3px;
@@ -26,7 +25,6 @@ const PostLoadingContainer = styled.div`
     }
 
     .sideContent {
-        //border: 1px solid red;
         width: calc(100% - 600px);
 
         display: flex;
@@ -48,7 +46,6 @@ const PostLoadingContainer = styled.div`
                 width: 32px;
                 height: 32px;
                 border-radius: 50%;
-                background-color: #eee;
                 cursor: progress;
                 background: linear-gradient(
                         0.25turn,
@@ -100,7 +97,6 @@ const PostLoadingContainer = styled.div`
                 .name {
                     height: 12px;
                     width: 100px;
-                    background-color: #eee;
                     border-radius: 3px;
                 }
 
@@ -108,7 +104,6 @@ const PostLoadingContainer = styled.div`
                     margin-top: 5px;
                     height: 10px;
                     width: 70px;
-                    //background-color: #eee;
                     border-radius: 3px;
                 }
             }
@@ -150,7 +145,6 @@ const PostLoadingContainer = styled.div`
             .commentsCount {
                 height: 15px;
                 width: 120px;
-                background-color: #eee;
                 border-radius: 3px;
             }
 
@@ -158,7 +152,6 @@ const PostLoadingContainer = styled.div`
                 margin-top: 5px;
                 height: 10px;
                 width: 70px;
-                background-color: #eee;
                 border-radius: 3px;
             }
         }

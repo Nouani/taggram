@@ -11,7 +11,6 @@ export const PostContainer = styled.div`
     border-radius: 3px;
 
     & > img {
-        //width: 10px;
         width: 100%;
         max-width: 600px;
         height: 100%;
@@ -28,8 +27,6 @@ export const PostContainer = styled.div`
 `;
 
 export const PostHeader = styled.div`
-    //border: 1px solid red;
-
     width: 100%;
     height: 70px;
     padding: 15px;
@@ -59,8 +56,6 @@ export const PostHeader = styled.div`
 `;
 
 export const PostComments = styled.div`
-    //border: 1px solid red;
-
     width: 100%;
     height: calc(100% - 140px);
 
@@ -70,13 +65,11 @@ export const PostComments = styled.div`
 
     ::-webkit-scrollbar {
         width: 0px;
-        background: transparent; /* make scrollbar transparent */
+        background: transparent;
     }
 `;
 
 export const PostFooter = styled.div`
-    //border: 1px solid red;
-
     width: 100%;
     height: 70px;
     padding: 15px;
