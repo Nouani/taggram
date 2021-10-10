@@ -1,4 +1,9 @@
 /* eslint-disable camelcase */
+export interface IUser {
+    username: string;
+    avatar: string | null;
+}
+
 export interface PostProps {
     post: IPost;
 }
@@ -15,26 +20,22 @@ export interface IPost {
     comments: Array<IComment>;
 }
 
-export interface CommentProps {
-    comment: IComment;
+export interface IRelatedPost {
+    uuid: string;
+    photo: string;
+    comment_count: number;
 }
 
-interface IComment {
+export interface CommentProps {
+    comment: IComment;
+    updateComments: Function;
+}
+
+export interface IComment {
     uuid: string;
     user: IUser;
     message: string;
     created_at: string;
     has_liked: boolean;
     like_count: number;
-}
-
-export interface IUser {
-    username: string;
-    avatar: string | null;
-}
-
-export interface IRelatedPost {
-    uuid: string;
-    photo: string;
-    comment_count: number;
 }

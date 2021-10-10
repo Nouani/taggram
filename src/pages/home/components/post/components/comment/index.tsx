@@ -7,19 +7,19 @@ import DefaultImage from "../../../../../../assets/default_image.png";
 
 import { CommentContainer, CommentContent } from "./styles";
 
-const Comment: React.FC<CommentProps> = ({ comment }) => {
+const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
     // eslint-disable-next-line no-unused-vars
-    function getDateFormatted(rawDate: string) {
+    const getDateFormatted = (rawDate: string) => {
         // TODO: implement this
 
         return "6h";
-    }
+    };
 
-    function getLikeCountFormatted(rawLikeCount: number) {
+    const getLikeCountFormatted = (rawLikeCount: number) => {
         return rawLikeCount > 0
             ? `${rawLikeCount} curtida${rawLikeCount > 1 ? "s" : ""}`
             : "";
-    }
+    };
 
     return (
         <CommentContainer>
@@ -37,7 +37,11 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
                     <strong>{getLikeCountFormatted(comment.like_count)}</strong>
                 </div>
             </CommentContent>
-            <HeartIcon hasLiked={comment.has_liked} />
+            <HeartIcon
+                commentUUID={comment.uuid}
+                hasLiked={comment.has_liked}
+                updateComments={updateComments}
+            />
         </CommentContainer>
     );
 };

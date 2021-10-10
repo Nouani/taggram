@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PostLoading from "./components/postLoading";
-import { IPost } from "../../../../data/interfaces";
+import { IComment, IPost } from "../../../../data/interfaces";
 import UserImage from "../UserImage";
 import Comment from "./components/comment";
 import { PostContainer, PostComments, PostHeader, PostFooter } from "./styles";
@@ -12,26 +12,45 @@ import MorePosts from "../morePosts";
 const Post: React.FC = () => {
     const user = useUser();
     const [post, setPost] = useState({} as IPost);
+    const [comments, setComments] = useState([] as Array<IComment>);
     const [isLoading, setIsLoading] = useState(true);
 
-    async function getPost() {
+    const getPost = async () => {
         setIsLoading(true);
 
-        const response = await api.get(`/post?username=${user.username}`);
+        const data = (await api.get(`/post?username=${user.username}`))
+            .data as IPost;
 
-        setPost(response.data);
+        setPost(data);
+        setComments(data.comments);
+
         setIsLoading(false);
-    }
+    };
+
+    const updateComments = (commentUpdated: IComment) => {
+        const commentsUpdated = comments.map(comment => {
+            if (comment.uuid === commentUpdated.uuid) {
+                return commentUpdated;
+            }
+            return comment;
+        });
+
+        setComments(commentsUpdated);
+    };
+    /* const updateComments = (texto: string) => {
+        console.log("chegou");
+        console.log(texto);
+    }; */
+
+    const getCommentsCountFormatted = (rawCommentsCount: number) => {
+        return `${rawCommentsCount} comentário${
+            rawCommentsCount === 1 ? "" : "s"
+        }`;
+    };
 
     useEffect(() => {
         getPost();
     }, []);
-
-    function getCommentsCountFormatted(rawCommentsCount: number) {
-        return `${rawCommentsCount} comentário${
-            rawCommentsCount === 1 ? "" : "s"
-        }`;
-    }
 
     const postLoaded = () => (
         <>
@@ -51,8 +70,12 @@ const Post: React.FC = () => {
                         </div>
                     </PostHeader>
                     <PostComments>
-                        {post.comments.map(comment => (
-                            <Comment key={comment.uuid} comment={comment} />
+                        {comments.map(comment => (
+                            <Comment
+                                key={comment.uuid}
+                                comment={comment}
+                                updateComments={updateComments}
+                            />
                         ))}
                     </PostComments>
                     <PostFooter>

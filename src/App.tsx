@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Navbar from "./components/navbar";
 import UserProvider from "./contexts/userContext";
 import Routes from "./routes";
@@ -9,6 +10,7 @@ const App: React.FC = () => {
     return (
         <>
             <GlobalStyle />
+            <Toaster />
             <BrowserRouter>
                 <UserProvider>
                     <Navbar />
