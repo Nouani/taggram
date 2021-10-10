@@ -12,13 +12,15 @@ export const PostContainer = styled.div`
 
     & > img {
         //width: 10px;
+        width: 100%;
         max-width: 600px;
         height: 100%;
         border-radius: 3px 0 0 3px;
+        background-color: #eee;
     }
 
     & > div {
-        width: 100%;
+        width: calc(100% - 600px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;

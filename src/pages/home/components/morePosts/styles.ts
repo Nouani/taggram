@@ -25,6 +25,7 @@ export const MorePostsContainer = styled.div`
         img {
             width: 280px;
             height: 280px;
+            background-color: #eee;
         }
     }
 `;

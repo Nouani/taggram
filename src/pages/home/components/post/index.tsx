@@ -37,10 +37,6 @@ const Post: React.FC = () => {
 
         setComments(commentsUpdated);
     };
-    /* const updateComments = (texto: string) => {
-        console.log("chegou");
-        console.log(texto);
-    }; */
 
     const getCommentsCountFormatted = (rawCommentsCount: number) => {
         return `${rawCommentsCount} comentário${
