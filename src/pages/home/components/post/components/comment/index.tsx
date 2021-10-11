@@ -18,15 +18,15 @@ const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
 
         let time = minutes;
         let complement = "min";
-        if (time > 60) {
+        if (time >= 60) {
             time = Math.floor(time / 60);
             complement = "h";
 
-            if (time > 24) {
+            if (time >= 24) {
                 time = Math.floor(time / 24);
                 complement = ` dia${time > 1 ? "s" : ""}`;
 
-                if (time > 7) {
+                if (time >= 7) {
                     time = Math.floor(time / 7);
                     complement = ` semana${time > 1 ? "s" : ""}`;
                 }
