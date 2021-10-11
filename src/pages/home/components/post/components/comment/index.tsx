@@ -12,17 +12,24 @@ const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
         const date = new Date(rawDate);
         const timeNow = Date.now();
         const diff = Math.abs(timeNow - Number(date));
-        const hours = Math.ceil(diff / (1000 * 60 * 60));
+        const minutes = Math.floor(diff / 1000);
 
-        let time = hours;
-        let complement = "h";
-        if (hours > 24) {
-            time = Math.ceil(time / 24);
-            complement = " dias";
+        if (Number.isNaN(minutes)) return rawDate;
 
-            if (time > 7) {
-                time = Math.ceil(time / 7);
-                complement = " semanas";
+        let time = minutes;
+        let complement = "min";
+        if (time > 60) {
+            time = Math.floor(time / 60);
+            complement = "h";
+
+            if (time > 24) {
+                time = Math.floor(time / 24);
+                complement = ` dia${time > 1 ? "s" : ""}`;
+
+                if (time > 7) {
+                    time = Math.floor(time / 7);
+                    complement = ` semana${time > 1 ? "s" : ""}`;
+                }
             }
         }
 
