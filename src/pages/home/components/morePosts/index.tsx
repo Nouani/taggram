@@ -31,6 +31,14 @@ const MorePosts: React.FC<Props> = ({ uuidPost }) => {
         getMorePosts();
     }, []);
 
+    useEffect(() => {
+        if (isLoading) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+    }, [isLoading]);
+
     const imagesLoading = () =>
         [...Array(6)].map((e, i) => (
             // eslint-disable-next-line react/no-array-index-key
@@ -47,10 +55,14 @@ const MorePosts: React.FC<Props> = ({ uuidPost }) => {
         ));
 
     return (
-        <MorePostsContainer>
-            <h1>Mais publicações</h1>
-            <div>{!isLoading ? imagesLoaded() : imagesLoading()}</div>
-        </MorePostsContainer>
+        <>
+            {(morePosts.length !== 0 || isLoading) && (
+                <MorePostsContainer>
+                    <h1>Mais publicações</h1>
+                    <div>{!isLoading ? imagesLoaded() : imagesLoading()}</div>
+                </MorePostsContainer>
+            )}
+        </>
     );
 };
 

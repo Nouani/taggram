@@ -19,10 +19,8 @@ const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
         let time = minutes;
         let complement = "min";
         if (time > 60) {
-            // console.log(time / 60);
             time = Math.floor(time / 60);
             complement = "h";
-            // console.log(time);
 
             if (time > 24) {
                 time = Math.floor(time / 24);

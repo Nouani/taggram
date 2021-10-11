@@ -34,7 +34,7 @@ const PostLoadingContainer = styled.div`
         .header {
             width: 100%;
             height: 70px;
-            padding: 15px;
+            padding: 15px 0px;
 
             display: flex;
             flex-direction: row;
