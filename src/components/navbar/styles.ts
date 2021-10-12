@@ -44,6 +44,7 @@ export const UserProfile = styled.div`
         width: 22px;
         height: 22px;
         border-radius: 50%;
+        background-color: #eee;
     }
 `;
 
