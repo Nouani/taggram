@@ -12,7 +12,7 @@ const Comment: React.FC<CommentProps> = ({ comment, updateComments }) => {
         const date = new Date(rawDate);
         const timeNow = Date.now();
         const diff = Math.abs(timeNow - Number(date));
-        const minutes = Math.floor(diff / 1000);
+        const minutes = Math.floor(diff / (1000 * 60));
 
         if (Number.isNaN(minutes)) return rawDate;
 
