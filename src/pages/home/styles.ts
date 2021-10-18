@@ -7,7 +7,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    padding: 80px 0;
+    padding: 80px 20px;
 
     & > div {
         width: 100%;
@@ -15,6 +15,11 @@ const Container = styled.div`
 
         display: flex;
         flex-direction: column;
+        align-items: center;
+
+        footer {
+            margin-top: 50px;
+        }
     }
 `;
 

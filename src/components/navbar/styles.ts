@@ -9,6 +9,7 @@ const loading = keyframes`
 export const Container = styled.div`
     width: 100%;
     height: 55px;
+    padding: 0 20px;
 
     position: fixed;
 

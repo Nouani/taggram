@@ -11,7 +11,7 @@ export const CommentContainer = styled.div`
 
 export const CommentContent = styled.div`
     width: 100%;
-    max-width: 220px;
+    padding: 0 15px;
 
     display: flex;
     flex-direction: column;

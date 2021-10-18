@@ -51,6 +51,8 @@ const MorePosts: React.FC<Props> = ({ uuidPost }) => {
                 key={relatedPost.uuid}
                 src={relatedPost.photo}
                 alt="RelatedPost"
+                width="800"
+                height="800"
             />
         ));
 
