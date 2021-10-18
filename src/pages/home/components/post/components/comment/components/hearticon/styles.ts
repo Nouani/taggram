@@ -22,7 +22,7 @@ const bounce = keyframes`
 `;
 
 export const HeartIconSelected = styled(AiFillHeart)`
-    margin-top: 10px;
+    margin-top: 8px;
     cursor: pointer;
 
     &.bounce {
@@ -31,7 +31,7 @@ export const HeartIconSelected = styled(AiFillHeart)`
 `;
 
 export const HeartIconUnselected = styled(AiOutlineHeart)`
-    margin-top: 10px;
+    margin-top: 8px;
     cursor: pointer;
 
     &.bounce {

@@ -20,9 +20,14 @@ export const MorePostsContainer = styled.div`
         margin-top: 20px;
 
         img {
-            width: 280px;
-            height: 280px;
+            width: 100%;
+            height: auto;
             background-color: #eee;
+
+            @media (min-width: 960px) {
+                max-height: 280px;
+                max-width: 280px;
+            }
         }
     }
 `;

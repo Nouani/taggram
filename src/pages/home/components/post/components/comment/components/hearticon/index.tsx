@@ -49,7 +49,7 @@ const HeartIcon: React.FC<Props> = ({
             {hasLiked ? (
                 <HeartIconSelected
                     color="#ED4956"
-                    size={15}
+                    size={18}
                     onClick={() => setStartAnimation(true)}
                     onAnimationStart={() => handleAnimationStart()}
                     className={startAnimation ? "bounce" : ""}
@@ -57,7 +57,7 @@ const HeartIcon: React.FC<Props> = ({
             ) : (
                 <HeartIconUnselected
                     color="#262626"
-                    size={15}
+                    size={18}
                     onClick={() => setStartAnimation(true)}
                     onAnimationStart={() => handleAnimationStart()}
                     className={startAnimation ? "bounce" : ""}

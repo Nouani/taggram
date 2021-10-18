@@ -51,7 +51,12 @@ const Post: React.FC = () => {
     const postLoaded = () => (
         <>
             <PostContainer>
-                <img src={post.photo} alt="PostImage" />
+                <img
+                    src={post.photo}
+                    alt="PostImage"
+                    height="800"
+                    width="800"
+                />
                 <div>
                     <PostHeader>
                         <UserImage

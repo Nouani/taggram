@@ -7,7 +7,6 @@ const loading = keyframes`
 `;
 
 const PostLoadingContainer = styled.div`
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -17,11 +16,20 @@ const PostLoadingContainer = styled.div`
     border: 1px solid #dbdbdb;
     border-radius: 3px;
 
-    .photo {
+    .imageContainer {
         width: 100%;
-        max-width: 600px;
-        border-radius: 3px 0 0 3px;
+        height: auto;
         background-color: #eee;
+
+        img {
+            width: 100%;
+            height: 100%;
+            visibility: hidden;
+        }
+
+        @media (min-width: 901px) {
+            max-width: 600px;
+        }
     }
 
     .sideContent {
@@ -153,6 +161,19 @@ const PostLoadingContainer = styled.div`
                 height: 10px;
                 width: 70px;
                 border-radius: 3px;
+            }
+        }
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        height: auto;
+
+        .sideContent {
+            width: 100%;
+
+            .content {
+                height: 300px;
             }
         }
     }

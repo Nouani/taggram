@@ -12,10 +12,13 @@ export const PostContainer = styled.div`
 
     & > img {
         width: 100%;
-        max-width: 600px;
         height: 100%;
         border-radius: 3px 0 0 3px;
         background-color: #eee;
+
+        @media (min-width: 901px) {
+            max-width: 600px;
+        }
     }
 
     & > div {
@@ -23,6 +26,20 @@ export const PostContainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        height: auto;
+
+        & > img {
+            border-radius: 3px 3px 0 0;
+            height: auto;
+        }
+
+        & > div {
+            width: 100%;
+        }
     }
 `;
 
@@ -66,6 +83,10 @@ export const PostComments = styled.div`
     ::-webkit-scrollbar {
         width: 0px;
         background: transparent;
+    }
+
+    @media (max-width: 900px) {
+        height: 300px;
     }
 `;
 
